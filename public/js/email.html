@@ -1,0 +1,56 @@
+<form name="emailForm" class="form-horizontal" role="form" ng-submit="em.onSubmit(emailForm.$valid)" novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : emailForm.from.$invalid && !emailForm.from.$pristine}">
+        <label for="from" class="col-sm-2 control-label">From*</label>
+        <div class="col-sm-10">
+            <input type=email class="form-control" id="from" name="from" ng-model="em.mail.from" placeholder="example@domain.com" ng-required="true">
+            <p ng-show="emailForm.from.$invalid && !emailForm.from.$pristine" class="help-block">Please enter a valid email</p>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : em.toInvalid && !emailForm.to.$pristine}">
+        <label for="to" class="col-sm-2 control-label">To*</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="to" name="to" ng-model="em.mail.to" placeholder="example@domain.com" ng-required="true">
+            <p ng-show="em.toInvalid" class="help-block">Please enter a valid email</p>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : em.ccInvalid && !emailForm.cc.$pristine}">
+        <label for="cc" class="col-sm-2 control-label">CC</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="cc" name="cc" ng-model="em.mail.cc" placeholder="example@domain.com">
+            <p ng-show="em.ccInvalid" class="help-block">Please enter a valid email</p>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : em.bccInvalid && !emailForm.bcc.$pristine}">
+        <label for="bcc" class="col-sm-2 control-label">Bcc</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="bcc" name="bcc" ng-model="em.mail.bcc" placeholder="example@domain.com">
+            <p ng-show="em.bccInvalid" class="help-block">Please enter a valid email</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="subject" class="col-sm-2 control-label">Subject*</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="subject" name="subject" ng-model="em.mail.subject" placeholder="Subject" ng-required="true">
+            <p ng-show="emailForm.subject.$invalid && !emailForm.subject.$pristine" class="help-block">Please enter a subject</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="message" class="col-sm-2 control-label">Message</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" rows="4" name="message" ng-model="em.mail.message"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+            <input id="submit" name="submit" ng-disabled="!emailForm.from.$valid || em.toInvalid || em.ccInvalid || em.bccInvalid || emailForm.$pristine || !emailForm.$valid" type="submit" value="Send" class="btn btn-primary">
+        </div>
+    </div>
+    <div class="form-group">
+        <div ng-show="em.sent" class="col-sm-10 col-md-10 col-lg-10 col-sm-offset-2 alert alert-success">
+            <strong>Success!</strong> {{em.success}}
+        </div>
+        <div ng-show="em.notSent" class="col-sm-10 col-md-10 col-lg-10 col-sm-offset-2 alert alert-danger">
+            <strong>Error!</strong> {{em.error}}
+        </div>
+    </div>
+</form>
