@@ -1,5 +1,4 @@
 var rp = require('request-promise');
-var fs = require('fs');
 var mailgun = {};
 
 
