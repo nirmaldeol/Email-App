@@ -35,5 +35,7 @@
         "nyc": "^8.1.0",
         "supertest": "^2.0.0"
     },
-    "engines": { "node": ">=4.4.5" }
+    "engines": {
+        "node": "4.4.5"
+    }
 }
