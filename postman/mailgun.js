@@ -19,7 +19,6 @@ var mailGunConfig = {
 
 mailgun.send = function(data) {
     var mailData = MailGunData(data);
-    console.log(mailData);
     return rp.post({
         url: mailGunConfig.url,
         json: true,

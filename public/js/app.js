@@ -12,11 +12,9 @@ angular.module('emailApp').component('emailSend', {
     }
 });
 
-function emailAppCtrl() {
 
-}
 
-function emailSendCtrl($scope, $http, emailService) {
+function emailSendCtrl($scope, emailService) {
     var em = this;
     em.mail = {
         from: '',
@@ -26,8 +24,8 @@ function emailSendCtrl($scope, $http, emailService) {
         subject: '',
         message: ''
     };
+    var defaultForm = angular.copy(em.mail);
     var checkEmails = emailService.checkEmails;
-    var getData = emailService.getEmailData;
     em.toInvalid = false;
     em.bccInvalid = false;
     em.ccInvalid = false;
@@ -37,27 +35,14 @@ function emailSendCtrl($scope, $http, emailService) {
     em.notSent = false;
 
     em.onSubmit = function() {
-        var emailData = getData(em.mail);
-        $http({
-                method: 'POST',
-                url: '/email',
-                data: emailData, //forms user object
-                headers: { 'Content-Type': 'application/json' }
-            })
-            .success(function(data) {
-                if (data.error) {
-                    em.notSent = true;
-
-                } else {
-                    em.sent = true;
-                    $scope.emailForm.$setPristine();
-
-                }
-            });
-
-
-        console.log();
-
+        emailService.submit(em.mail).then(function(data) {
+            em.sent = true;
+            em.mail = angular.copy(defaultForm);
+            $scope.emailForm.$setPristine();
+        }, function(err) {
+            console.log(err)
+            em.notSent = true;
+        });
     }
 
 
@@ -75,7 +60,10 @@ function emailSendCtrl($scope, $http, emailService) {
 
 };
 
+function emailAppCtrl() {
+
+}
 
 
 
-emailSendCtrl.$inject = ['$scope', '$http', 'emailService'];
+emailSendCtrl.$inject = ['$scope', 'emailService'];
