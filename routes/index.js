@@ -6,7 +6,7 @@ var sendgrid = require('../postman/sendgrid');
 
 
 router.get('/', function(req, res) {
-    res.render('index', { title: "testin api" });
+    res.render('index', { title: "Email Application" });
 });
 
 module.exports = router;
