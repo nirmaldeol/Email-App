@@ -1,12 +1,13 @@
 {
-  "name": "email-app",
-  "version": "0.0.1",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "components"
-  ],
-  "dependencies": {
-    "bootstrap": "^3.3.7"
-  }
+    "name": "email-app",
+    "version": "0.0.1",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "components"
+    ],
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "angular": "^1.5.9"
+    }
 }

@@ -9,7 +9,7 @@
         "test:coverage": "nyc npm test",
         "test:unit": "mocha --recursive test/middleware test/models test/routes",
         "test:integration": "mocha --recursive test/integration",
-        "postinstall": "./node_modules/bower/bin/bower install"
+        "postinstall": "node ./node_modules/bower/bin/bower install"
     },
     "dependencies": {
         "bower": "^1.8.0",
