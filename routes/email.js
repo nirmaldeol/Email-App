@@ -7,10 +7,10 @@ var sendEmail = require('../postman/index');
 
 router.post('/', function(request, response) {
     sendEmail(request.body).then(res => {
-        var success = { statusCode: res.statusCode, message: "Your email was succesfully sent" }
-        response.status(res.statusCode).send(success);
+        var message = "Your email was succesfully sent";
+        response.status(res.statusCode).send(message);
     }).catch(err => {
-        var error = { error: "Email servers are down at this moement, Please try again in some time" }
+        var error = "Email servers are down at this moment, Please try again laters";
         response.status(err.statusCode).send(error);
     })
 });

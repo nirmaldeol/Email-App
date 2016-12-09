@@ -2,8 +2,10 @@
     <div class="form-group" ng-class="{ 'has-error' : emailForm.from.$invalid && !emailForm.from.$pristine}">
         <label for="from" class="col-sm-2 control-label">From*</label>
         <div class="col-sm-10">
-            <input type=email class="form-control" id="from" name="from" ng-model="em.mail.from" placeholder="example@domain.com" required>
-            <p ng-show="emailForm.from.$invalid && !emailForm.from.$pristine" class="help-block">Please enter a valid email</p>
+            <input type=email class="form-control" id="from" name="from" ng-model="em.mail.from" autofocus="autofocus" placeholder="example@domain.com" required>
+            <p ng-show="emailForm.from.$invalid && !emailForm.from.$pristine" class="help-block ">Please enter a valid email</p>
+            <p ng-show="emailForm.from.$pristine && emailForm.$submitted" class="help-block  ">From email address is required</p>
+
         </div>
     </div>
     <div class="form-group" ng-class="{ 'has-error' : em.toInvalid && !emailForm.to.$pristine || emailForm.to.$invalid && !emailForm.to.$pristine }">
@@ -11,28 +13,30 @@
         <div class="col-sm-10">
             <input type="text" class="form-control" id="to" name="to" ng-model="em.mail.to" placeholder="example@domain.com,example@domain.com" required>
             <p ng-show="em.toInvalid" class="help-block">Please enter a valid email</p>
-            <p ng-show="emailForm.to.$invalid && !emailForm.to.$pristine" class="help-block">To Email is required</p>
+            <p ng-show="emailForm.to.$invalid && !emailForm.to.$pristine" class="help-block ">Please enter a valid email</p>
+            <p ng-show="emailForm.from.$pristine && emailForm.$submitted" class="help-block ">To email address is required</p>
+
         </div>
     </div>
     <div class="form-group" ng-class="{ 'has-error' : em.ccInvalid && !emailForm.cc.$pristine}">
-        <label for="cc" class="col-sm-2 control-label">CC</label>
+        <label for="cc" class="col-sm-2 control-label">Cc</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="cc" name="cc" ng-model="em.mail.cc" placeholder="example@domain.com,example@domain.com">
-            <p ng-show="em.ccInvalid" class="help-block">Please enter a valid email</p>
+            <p ng-show="em.ccInvalid" class="help-block ">Please enter a valid email</p>
         </div>
     </div>
     <div class="form-group" ng-class="{ 'has-error' : em.bccInvalid && !emailForm.bcc.$pristine}">
         <label for="bcc" class="col-sm-2 control-label">Bcc</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="bcc" name="bcc" ng-model="em.mail.bcc" placeholder="example@domain.com,example@domain.com">
-            <p ng-show="em.bccInvalid" class="help-block">Please enter a valid email</p>
+            <p ng-show="em.bccInvalid" class="help-block ">Please enter a valid email</p>
         </div>
     </div>
     <div class="form-group" ng-class="{ 'has-error' : emailForm.subject.$invalid && !emailForm.subject.$pristine}">
         <label for="subject" class="col-sm-2 control-label">Subject*</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="subject" name="subject" ng-model="em.mail.subject" placeholder="Subject" required>
-            <p ng-show="emailForm.subject.$invalid && !emailForm.subject.$pristine" class="help-block">Please enter a subject</p>
+            <p ng-show="emailForm.from.$pristine && emailForm.$submitted" class="help-block ">Subject is required</p>
         </div>
     </div>
     <div class="form-group">
@@ -44,6 +48,7 @@
     <div class="form-group">
         <div class="col-sm-10 col-sm-offset-2">
             <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
+            <input id="reset" name="reset" type="reset" value="Reset" class="btn btn-default" ng-click="em.reset()">
         </div>
     </div>
     <div class="form-group">
