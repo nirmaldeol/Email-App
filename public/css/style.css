@@ -1,7 +1,5 @@
 body {
-    padding: 0;
-    margin: 0;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px 'Lato', Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -18,4 +16,36 @@ a {
     height: auto;
     padding: 0;
     margin: 0 auto;
+}
+
+.navbar-inverse {
+    background-color: #00796B;
+    border-color: #00796B;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #027164;
+    border-color: #333;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #01695d;
+    border-color: #204d74;
+}
+
+.form-control {
+    padding: 15px 11px;
+    font-size: 14px;
+}
+
+.help-block {
+    color: #a94442;
+    font-weight: bold;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
 }

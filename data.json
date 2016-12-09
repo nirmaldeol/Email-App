@@ -1822,4 +1822,770 @@
       }
     }
   }
+}{
+  "name": "StatusCodeError",
+  "statusCode": 401,
+  "message": "401 - {\"errors\":[{\"message\":\"The provided authorization grant is invalid, expired, or revoked\",\"field\":null,\"help\":null}]}",
+  "error": {
+    "errors": [
+      {
+        "message": "The provided authorization grant is invalid, expired, or revoked",
+        "field": null,
+        "help": null
+      }
+    ]
+  },
+  "options": {
+    "url": "https://api.sendgrid.com/v3/mail/send",
+    "json": true,
+    "resolveWithFullResponse": true,
+    "headers": {
+      "Authorization": "Bearer undefined",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "personalizations": [
+        {
+          "to": [
+            {
+              "email": "ana@gmail.com"
+            }
+          ]
+        }
+      ],
+      "from": {
+        "email": "asd@gmail.com"
+      },
+      "subject": "skdfjsdf",
+      "content": [
+        {
+          "type": "text/plain",
+          "value": "Empty Message Body"
+        }
+      ]
+    },
+    "method": "POST",
+    "simple": true,
+    "transform2xxOnly": false
+  },
+  "response": {
+    "statusCode": 401,
+    "body": {
+      "errors": [
+        {
+          "message": "The provided authorization grant is invalid, expired, or revoked",
+          "field": null,
+          "help": null
+        }
+      ]
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Mon, 05 Dec 2016 08:07:37 GMT",
+      "content-type": "application/json",
+      "content-length": "116",
+      "connection": "close",
+      "x-frame-options": "DENY"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.sendgrid.com",
+        "port": 443,
+        "hostname": "api.sendgrid.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v3/mail/send",
+        "path": "/v3/mail/send",
+        "href": "https://api.sendgrid.com/v3/mail/send"
+      },
+      "method": "POST",
+      "headers": {
+        "Authorization": "Bearer undefined",
+        "Content-Type": "application/json",
+        "accept": "application/json",
+        "content-length": 174
+      }
+    }
+  }
+}{
+  "name": "StatusCodeError",
+  "statusCode": 401,
+  "message": "401 - \"Forbidden\"",
+  "error": "Forbidden",
+  "options": {
+    "url": "https://api.mailgun.net/v3/<your domain >/messages",
+    "json": true,
+    "resolveWithFullResponse": true,
+    "headers": {
+      "Authorization": "Basic YXBpOnVuZGVmaW5lZA==",
+      "Content-Type": " application/x-www-form-urlencoded"
+    },
+    "form": {
+      "from": "asd@gmail.com",
+      "to": [
+        "ana@gmail.com"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "skdfjsdf",
+      "text": ""
+    },
+    "method": "POST",
+    "simple": true,
+    "transform2xxOnly": false
+  },
+  "response": {
+    "statusCode": 401,
+    "body": "Forbidden",
+    "headers": {
+      "content-type": "text/html; charset=utf-8",
+      "date": "Mon, 05 Dec 2016 08:07:38 GMT",
+      "server": "nginx",
+      "www-authenticate": "Basic realm=\"MG API\"",
+      "content-length": "9",
+      "connection": "Close"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.mailgun.net",
+        "port": 443,
+        "hostname": "api.mailgun.net",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v3/%3Cyour%20domain%20%3E/messages",
+        "path": "/v3/%3Cyour%20domain%20%3E/messages",
+        "href": "https://api.mailgun.net/v3/%3Cyour%20domain%20%3E/messages"
+      },
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic YXBpOnVuZGVmaW5lZA==",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "accept": "application/json",
+        "content-length": 69
+      }
+    }
+  }
+}{
+  "name": "StatusCodeError",
+  "statusCode": 401,
+  "message": "401 - {\"errors\":[{\"message\":\"The provided authorization grant is invalid, expired, or revoked\",\"field\":null,\"help\":null}]}",
+  "error": {
+    "errors": [
+      {
+        "message": "The provided authorization grant is invalid, expired, or revoked",
+        "field": null,
+        "help": null
+      }
+    ]
+  },
+  "options": {
+    "url": "https://api.sendgrid.com/v3/mail/send",
+    "json": true,
+    "resolveWithFullResponse": true,
+    "headers": {
+      "Authorization": "Bearer undefined",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "personalizations": [
+        {
+          "to": [
+            {
+              "email": "sdfsdf@gmail.com"
+            }
+          ],
+          "cc": [
+            {
+              "email": "em@gmail.com"
+            }
+          ]
+        }
+      ],
+      "from": {
+        "email": "sdfsdfsd@gmail.com"
+      },
+      "subject": "sdfsfsdfsdf",
+      "content": [
+        {
+          "type": "text/plain",
+          "value": "Empty Message Body"
+        }
+      ]
+    },
+    "method": "POST",
+    "simple": true,
+    "transform2xxOnly": false
+  },
+  "response": {
+    "statusCode": 401,
+    "body": {
+      "errors": [
+        {
+          "message": "The provided authorization grant is invalid, expired, or revoked",
+          "field": null,
+          "help": null
+        }
+      ]
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Mon, 05 Dec 2016 08:10:29 GMT",
+      "content-type": "application/json",
+      "content-length": "116",
+      "connection": "close",
+      "x-frame-options": "DENY"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.sendgrid.com",
+        "port": 443,
+        "hostname": "api.sendgrid.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v3/mail/send",
+        "path": "/v3/mail/send",
+        "href": "https://api.sendgrid.com/v3/mail/send"
+      },
+      "method": "POST",
+      "headers": {
+        "Authorization": "Bearer undefined",
+        "Content-Type": "application/json",
+        "accept": "application/json",
+        "content-length": 217
+      }
+    }
+  }
+}{
+  "name": "StatusCodeError",
+  "statusCode": 401,
+  "message": "401 - \"Forbidden\"",
+  "error": "Forbidden",
+  "options": {
+    "url": "https://api.mailgun.net/v3/<your domain >/messages",
+    "json": true,
+    "resolveWithFullResponse": true,
+    "headers": {
+      "Authorization": "Basic YXBpOnVuZGVmaW5lZA==",
+      "Content-Type": " application/x-www-form-urlencoded"
+    },
+    "form": {
+      "from": "sdfsdfsd@gmail.com",
+      "to": [
+        "sdfsdf@gmail.com"
+      ],
+      "cc": [
+        "ng@gmail.com",
+        "em@gmail.com"
+      ],
+      "bcc": [
+        "fgk@gmail.com",
+        "md@gmail.com"
+      ],
+      "subject": "sdfsfsdfsdf",
+      "text": ""
+    },
+    "method": "POST",
+    "simple": true,
+    "transform2xxOnly": false
+  },
+  "response": {
+    "statusCode": 401,
+    "body": "Forbidden",
+    "headers": {
+      "content-type": "text/html; charset=utf-8",
+      "date": "Mon, 05 Dec 2016 08:10:29 GMT",
+      "server": "nginx",
+      "www-authenticate": "Basic realm=\"MG API\"",
+      "content-length": "9",
+      "connection": "Close"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.mailgun.net",
+        "port": 443,
+        "hostname": "api.mailgun.net",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v3/%3Cyour%20domain%20%3E/messages",
+        "path": "/v3/%3Cyour%20domain%20%3E/messages",
+        "href": "https://api.mailgun.net/v3/%3Cyour%20domain%20%3E/messages"
+      },
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic YXBpOnVuZGVmaW5lZA==",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "accept": "application/json",
+        "content-length": 183
+      }
+    }
+  }
+}{
+  "name": "StatusCodeError",
+  "statusCode": 401,
+  "message": "401 - {\"errors\":[{\"message\":\"The provided authorization grant is invalid, expired, or revoked\",\"field\":null,\"help\":null}]}",
+  "error": {
+    "errors": [
+      {
+        "message": "The provided authorization grant is invalid, expired, or revoked",
+        "field": null,
+        "help": null
+      }
+    ]
+  },
+  "options": {
+    "url": "https://api.sendgrid.com/v3/mail/send",
+    "json": true,
+    "resolveWithFullResponse": true,
+    "headers": {
+      "Authorization": "Bearer undefined",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "personalizations": [
+        {
+          "to": [
+            {
+              "email": ""
+            }
+          ]
+        }
+      ],
+      "from": {
+        "email": ""
+      },
+      "subject": "",
+      "content": [
+        {
+          "type": "text/plain",
+          "value": "Empty Message Body"
+        }
+      ]
+    },
+    "method": "POST",
+    "simple": true,
+    "transform2xxOnly": false
+  },
+  "response": {
+    "statusCode": 401,
+    "body": {
+      "errors": [
+        {
+          "message": "The provided authorization grant is invalid, expired, or revoked",
+          "field": null,
+          "help": null
+        }
+      ]
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Mon, 05 Dec 2016 08:19:08 GMT",
+      "content-type": "application/json",
+      "content-length": "116",
+      "connection": "close",
+      "x-frame-options": "DENY"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.sendgrid.com",
+        "port": 443,
+        "hostname": "api.sendgrid.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v3/mail/send",
+        "path": "/v3/mail/send",
+        "href": "https://api.sendgrid.com/v3/mail/send"
+      },
+      "method": "POST",
+      "headers": {
+        "Authorization": "Bearer undefined",
+        "Content-Type": "application/json",
+        "accept": "application/json",
+        "content-length": 140
+      }
+    }
+  }
+}{
+  "name": "StatusCodeError",
+  "statusCode": 401,
+  "message": "401 - \"Forbidden\"",
+  "error": "Forbidden",
+  "options": {
+    "url": "https://api.mailgun.net/v3/<your domain >/messages",
+    "json": true,
+    "resolveWithFullResponse": true,
+    "headers": {
+      "Authorization": "Basic YXBpOnVuZGVmaW5lZA==",
+      "Content-Type": " application/x-www-form-urlencoded"
+    },
+    "form": {
+      "from": "",
+      "to": [
+        ""
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "",
+      "text": ""
+    },
+    "method": "POST",
+    "simple": true,
+    "transform2xxOnly": false
+  },
+  "response": {
+    "statusCode": 401,
+    "body": "Forbidden",
+    "headers": {
+      "server": "nginx",
+      "date": "Mon, 05 Dec 2016 08:19:09 GMT",
+      "content-type": "text/html; charset=utf-8",
+      "content-length": "9",
+      "connection": "close",
+      "www-authenticate": "Basic realm=\"MG API\""
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.mailgun.net",
+        "port": 443,
+        "hostname": "api.mailgun.net",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v3/%3Cyour%20domain%20%3E/messages",
+        "path": "/v3/%3Cyour%20domain%20%3E/messages",
+        "href": "https://api.mailgun.net/v3/%3Cyour%20domain%20%3E/messages"
+      },
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic YXBpOnVuZGVmaW5lZA==",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "accept": "application/json",
+        "content-length": 31
+      }
+    }
+  }
+}{
+  "name": "StatusCodeError",
+  "statusCode": 401,
+  "message": "401 - {\"errors\":[{\"message\":\"The provided authorization grant is invalid, expired, or revoked\",\"field\":null,\"help\":null}]}",
+  "error": {
+    "errors": [
+      {
+        "message": "The provided authorization grant is invalid, expired, or revoked",
+        "field": null,
+        "help": null
+      }
+    ]
+  },
+  "options": {
+    "url": "https://api.sendgrid.com/v3/mail/send",
+    "json": true,
+    "resolveWithFullResponse": true,
+    "headers": {
+      "Authorization": "Bearer undefined",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "personalizations": [
+        {
+          "to": [
+            {
+              "email": "jfg@gmi.com"
+            }
+          ]
+        }
+      ],
+      "from": {
+        "email": "nf@gn.com"
+      },
+      "subject": "sdfgsdfsd",
+      "content": [
+        {
+          "type": "text/plain",
+          "value": "Empty Message Body"
+        }
+      ]
+    },
+    "method": "POST",
+    "simple": true,
+    "transform2xxOnly": false
+  },
+  "response": {
+    "statusCode": 401,
+    "body": {
+      "errors": [
+        {
+          "message": "The provided authorization grant is invalid, expired, or revoked",
+          "field": null,
+          "help": null
+        }
+      ]
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Fri, 09 Dec 2016 13:20:43 GMT",
+      "content-type": "application/json",
+      "content-length": "116",
+      "connection": "close",
+      "x-frame-options": "DENY"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.sendgrid.com",
+        "port": 443,
+        "hostname": "api.sendgrid.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v3/mail/send",
+        "path": "/v3/mail/send",
+        "href": "https://api.sendgrid.com/v3/mail/send"
+      },
+      "method": "POST",
+      "headers": {
+        "Authorization": "Bearer undefined",
+        "Content-Type": "application/json",
+        "accept": "application/json",
+        "content-length": 169
+      }
+    }
+  }
+}{
+  "name": "StatusCodeError",
+  "statusCode": 401,
+  "message": "401 - \"Forbidden\"",
+  "error": "Forbidden",
+  "options": {
+    "url": "https://api.mailgun.net/v3/<your domain >/messages",
+    "json": true,
+    "resolveWithFullResponse": true,
+    "headers": {
+      "Authorization": "Basic YXBpOnVuZGVmaW5lZA==",
+      "Content-Type": " application/x-www-form-urlencoded"
+    },
+    "form": {
+      "from": "nf@gn.com",
+      "to": [
+        "jfg@gmi.com"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "sdfgsdfsd",
+      "text": ""
+    },
+    "method": "POST",
+    "simple": true,
+    "transform2xxOnly": false
+  },
+  "response": {
+    "statusCode": 401,
+    "body": "Forbidden",
+    "headers": {
+      "server": "nginx",
+      "date": "Fri, 09 Dec 2016 13:20:44 GMT",
+      "content-type": "text/html; charset=utf-8",
+      "content-length": "9",
+      "connection": "close",
+      "www-authenticate": "Basic realm=\"MG API\""
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.mailgun.net",
+        "port": 443,
+        "hostname": "api.mailgun.net",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v3/%3Cyour%20domain%20%3E/messages",
+        "path": "/v3/%3Cyour%20domain%20%3E/messages",
+        "href": "https://api.mailgun.net/v3/%3Cyour%20domain%20%3E/messages"
+      },
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic YXBpOnVuZGVmaW5lZA==",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "accept": "application/json",
+        "content-length": 64
+      }
+    }
+  }
+}{
+  "name": "StatusCodeError",
+  "statusCode": 401,
+  "message": "401 - {\"errors\":[{\"message\":\"The provided authorization grant is invalid, expired, or revoked\",\"field\":null,\"help\":null}]}",
+  "error": {
+    "errors": [
+      {
+        "message": "The provided authorization grant is invalid, expired, or revoked",
+        "field": null,
+        "help": null
+      }
+    ]
+  },
+  "options": {
+    "url": "https://api.sendgrid.com/v3/mail/send",
+    "json": true,
+    "resolveWithFullResponse": true,
+    "headers": {
+      "Authorization": "Bearer undefined",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "personalizations": [
+        {
+          "to": [
+            {
+              "email": "jg@jg.com"
+            }
+          ]
+        }
+      ],
+      "from": {
+        "email": "ng@gn.com"
+      },
+      "subject": "sdfsdfs",
+      "content": [
+        {
+          "type": "text/plain",
+          "value": "Empty Message Body"
+        }
+      ]
+    },
+    "method": "POST",
+    "simple": true,
+    "transform2xxOnly": false
+  },
+  "response": {
+    "statusCode": 401,
+    "body": {
+      "errors": [
+        {
+          "message": "The provided authorization grant is invalid, expired, or revoked",
+          "field": null,
+          "help": null
+        }
+      ]
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Fri, 09 Dec 2016 13:21:58 GMT",
+      "content-type": "application/json",
+      "content-length": "116",
+      "connection": "close",
+      "x-frame-options": "DENY"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.sendgrid.com",
+        "port": 443,
+        "hostname": "api.sendgrid.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v3/mail/send",
+        "path": "/v3/mail/send",
+        "href": "https://api.sendgrid.com/v3/mail/send"
+      },
+      "method": "POST",
+      "headers": {
+        "Authorization": "Bearer undefined",
+        "Content-Type": "application/json",
+        "accept": "application/json",
+        "content-length": 165
+      }
+    }
+  }
+}{
+  "name": "StatusCodeError",
+  "statusCode": 401,
+  "message": "401 - \"Forbidden\"",
+  "error": "Forbidden",
+  "options": {
+    "url": "https://api.mailgun.net/v3/<your domain >/messages",
+    "json": true,
+    "resolveWithFullResponse": true,
+    "headers": {
+      "Authorization": "Basic YXBpOnVuZGVmaW5lZA==",
+      "Content-Type": " application/x-www-form-urlencoded"
+    },
+    "form": {
+      "from": "ng@gn.com",
+      "to": [
+        "jg@jg.com"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "sdfsdfs",
+      "text": ""
+    },
+    "method": "POST",
+    "simple": true,
+    "transform2xxOnly": false
+  },
+  "response": {
+    "statusCode": 401,
+    "body": "Forbidden",
+    "headers": {
+      "server": "nginx",
+      "date": "Fri, 09 Dec 2016 13:21:58 GMT",
+      "content-type": "text/html; charset=utf-8",
+      "content-length": "9",
+      "connection": "close",
+      "www-authenticate": "Basic realm=\"MG API\""
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.mailgun.net",
+        "port": 443,
+        "hostname": "api.mailgun.net",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v3/%3Cyour%20domain%20%3E/messages",
+        "path": "/v3/%3Cyour%20domain%20%3E/messages",
+        "href": "https://api.mailgun.net/v3/%3Cyour%20domain%20%3E/messages"
+      },
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic YXBpOnVuZGVmaW5lZA==",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "accept": "application/json",
+        "content-length": 60
+      }
+    }
+  }
 }

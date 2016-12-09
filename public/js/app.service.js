@@ -17,7 +17,18 @@ function emailService($http) {
         return valid;
     };
 
-    this.getEmailData = function(mail) {
+
+    this.submit = function(data) {
+        var emailData = getEmailData(data);
+        return $http({
+            method: 'POST',
+            url: '/email',
+            data: emailData, //forms user object
+            headers: { 'Content-Type': 'application/json' }
+        });
+    }
+
+    function getEmailData(mail) {
         var emailData = {};
         emailData.from = mail.from;
         emailData.to = pushMails(mail.to);
