@@ -1,5 +1,5 @@
 angular.module('emailApp').component('emailSend', {
-    templateUrl: '/js/comp/email.html',
+    templateUrl: '/js/comp/email/email.html',
     controller: emailSendCtrl,
     controllerAs: 'em',
     bindings: {
@@ -25,7 +25,7 @@ function emailSendCtrl($scope, emailService) {
     em.bccInvalid = false;
     em.ccInvalid = false;
     em.success = '';
-    em.error = '';
+    em.errors = [];
     em.sent = false;
     em.notSent = false;
 
@@ -40,11 +40,13 @@ function emailSendCtrl($scope, emailService) {
         emailService.submit(em.mail).then(function(data) {
             em.sent = true;
             em.success = data.message;
+            console.log(data);
             em.reset();
         }, function(err) {
-            console.log(err.data)
-            em.error = err.data;
+            console.log(err)
+            em.errors = err.data.err;
             em.notSent = true;
+
         });
     }
 

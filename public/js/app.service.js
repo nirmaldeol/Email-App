@@ -42,10 +42,13 @@ function emailService($http) {
 
     function pushMails(emails) {
         var local = [];
-        var emailarray = emails.split(",")
-        emailarray.forEach(function(email) {
-            local.push(email.trim());
-        });
+        if (emails.length > 0) {
+            var emailarray = emails.split(",")
+            emailarray.forEach(function(email) {
+                local.push(email.trim());
+            });
+        }
+
         return local;
     }
 

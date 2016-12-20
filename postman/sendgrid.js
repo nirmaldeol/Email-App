@@ -17,13 +17,18 @@ var sendGridConfig = {
 
 sendgrid.send = function(data) {
     var emailData = SendGridData(data);
-    return rp.post({
-        url: sendGridConfig.url,
-        json: true,
-        resolveWithFullResponse: true,
-        headers: sendGridConfig.headers,
-        body: emailData
-    })
+    var newdata = '';
+    console.log(emailData);
+    console.log(emailData.personalizations[0]);
+
+
+    // return rp.post({
+    //     url: sendGridConfig.url,
+    //     json: true,
+    //     resolveWithFullResponse: true,
+    //     headers: sendGridConfig.headers,
+    //     body: emailData
+    // })
 };
 
 
@@ -42,19 +47,25 @@ function SendGridData(data) {
         var emailObj = { email: email }
         mailData.personalizations[0].to.push(emailObj);
     }, this);
-    if (data.cc[0] !== '') {
+
+    if (data.cc.length > 0) {
+        mailData.personalizations[0].cc = [];
         data.cc.forEach(function(email) {
             var emailObj = { email: email };
-            mailData.personalizations[0].cc = [];
             mailData.personalizations[0].cc.push(emailObj);
-        }, this);
-    } else if (data.bcc[0] !== '') {
-        data.bcc.forEach(function(bccemail) {
-            var emailObj = { email: email };
-            mailData.personalizations[0].bcc = [];
-            mailData.personalizations[0].bcc.push(emailObj);
-        }, this);
+        });
     }
+
+
+    if (data.bcc.length > 0) {
+        mailData.personalizations[0].bcc = [];
+        data.bcc.forEach(function(email) {
+            var emailObj = { email: email };
+            mailData.personalizations[0].bcc.push(emailObj);
+        });
+    }
+
+
     if (data.message == '') {
         mailData.content[0].value = "Empty Message Body";
     }

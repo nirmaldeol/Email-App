@@ -1,4 +1,5 @@
 var rp = require('request-promise');
+var validator = require('validator');
 var mailgun = {};
 
 
@@ -19,40 +20,28 @@ var mailGunConfig = {
 
 mailgun.send = function(data) {
     var mailData = MailGunData(data);
-    return rp.post({
-        url: mailGunConfig.url,
-        json: true,
-        resolveWithFullResponse: true,
-        headers: mailGunConfig.headers,
-        form: mailData
-    })
+    var newdata = '';
+    console.log(mailData);
+    // return rp.post({
+    //     url: mailGunConfig.url,
+    //     json: true,
+    //     resolveWithFullResponse: true,
+    //     headers: mailGunConfig.headers,
+    //     form: mailData
+    // })
 };
 
 
 function MailGunData(data) {
     var mailData = {
         from: data.from,
-        to: [],
-        cc: [],
-        bcc: [],
+        to: data.to,
+        cc: data.cc,
+        bcc: data.bcc,
         subject: data.subject,
         text: data.message
     };
 
-    data.to.forEach(function(email) {
-        mailData.to.push(email);
-    }, this);
-
-    if (data.cc[0] !== '') {
-        data.cc.forEach(function(email) {
-            mailData.cc.push(email);
-        }, this);
-    }
-    if (data.bcc[0] !== '') {
-        data.bcc.forEach(function(email) {
-            mailData.bcc.push(email);
-        }, this);
-    }
     return mailData
 };
 
