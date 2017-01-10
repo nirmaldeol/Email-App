@@ -16,7 +16,7 @@ If on server then you process env variables to set key and URL
 You need to set three environment variables on server:  
 
 SENDGRID_KEY   
- MAINGUN_KEY   
- MAILGUN_URL
+MAINGUN_KEY   
+MAILGUN_DOMAIN
 
 Send emails and enjoy.
