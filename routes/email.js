@@ -12,7 +12,7 @@ router.post('/', function(req, res) {
     if (error.err) {
         res.status(400).json({ title: 'Bad Request', err: error.des });
     } else {
-        sendEmail(request.body).then(res => {
+        sendEmail(req.body).then(res => {
             var message = "Your email was succesfully sent";
             response.status(res.statusCode).send(message);
         }).catch(err => {

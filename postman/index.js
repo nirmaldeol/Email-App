@@ -6,7 +6,6 @@ var sendgrid = require('./sendgrid');
 
 
 module.exports = function(data) {
-
     return new Promise(function(resolve, reject) {
         sendgrid.send(data).then(resp => {
             resolve(resp);
