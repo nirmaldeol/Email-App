@@ -9,7 +9,7 @@ var request = require("request");
 chai.should();
 var data = {
     from: 'someone@gmail.com',
-    to: ['nirmaldeol@outlook.com'],
+    to: ['someone@outlook.com'],
     cc: [],
     bcc: [],
     subject: 'subject',

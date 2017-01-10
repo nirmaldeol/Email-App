@@ -17,18 +17,13 @@ var sendGridConfig = {
 
 sendgrid.send = function(data) {
     var emailData = SendGridData(data);
-    var newdata = '';
-    console.log(emailData);
-    console.log(emailData.personalizations[0]);
-
-
-    // return rp.post({
-    //     url: sendGridConfig.url,
-    //     json: true,
-    //     resolveWithFullResponse: true,
-    //     headers: sendGridConfig.headers,
-    //     body: emailData
-    // })
+    return rp.post({
+        url: sendGridConfig.url,
+        json: true,
+        resolveWithFullResponse: true,
+        headers: sendGridConfig.headers,
+        body: emailData
+    })
 };
 
 

@@ -1,5 +1,5 @@
 angular.module('emailApp').component('emailSend', {
-    templateUrl: '/js/comp/email/email.html',
+    templateUrl: '/js/comp/email/email.comp.html',
     controller: emailSendCtrl,
     controllerAs: 'em',
     bindings: {
@@ -20,10 +20,6 @@ function emailSendCtrl($scope, emailService) {
         message: ''
     };
     var defaultForm = angular.copy(em.mail);
-    var checkEmails = emailService.checkEmails;
-    em.toInvalid = false;
-    em.bccInvalid = false;
-    em.ccInvalid = false;
     em.success = '';
     em.errors = [];
     em.sent = false;
@@ -49,19 +45,6 @@ function emailSendCtrl($scope, emailService) {
 
         });
     }
-
-
-
-    $scope.$watch('em.mail.to', function(newValue, oldValue) {
-        em.toInvalid = checkEmails(em.mail.to);
-    });
-    $scope.$watch('em.mail.cc', function(newValue, oldValue) {
-        em.ccInvalid = checkEmails(em.mail.cc);
-    });
-    $scope.$watch('em.mail.bcc', function(newValue, oldValue) {
-        em.bccInvalid = checkEmails(em.mail.bcc);
-    });
-
 
 };
 

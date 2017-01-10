@@ -1,42 +1,40 @@
 <form name="emailForm" class="form-horizontal" role="form" ng-submit="emailForm.$valid && em.onSubmit()" novalidate>
-    <div class="form-group" ng-class="{ 'has-error' : emailForm.from.$invalid && !emailForm.from.$pristine}">
+    <div class="form-group" ng-class="{ 'has-error' : emailForm.from.$invalid && !emailForm.from.$pristine||emailForm.from.$invalid && emailForm.$submitted}">
         <label for="from" class="col-sm-2 control-label">From*</label>
         <div class="col-sm-10">
             <input type=email class="form-control" id="from" name="from" ng-model="em.mail.from" autofocus="autofocus" placeholder="example@domain.com" required>
-            <p ng-show="emailForm.from.$invalid && !emailForm.from.$pristine" class="help-block ">Please enter a valid email</p>
-            <p ng-show="emailForm.from.$invalid && emailForm.$submitted" class="help-block  ">From email address is required</p>
-
+            <p ng-show="emailForm.from.$error.email && emailForm.from.$touched" class="help-block ">Please enter a valid email</p>
+            <p ng-show="emailForm.from.$invalid && emailForm.$submitted || emailForm.from.$error.required && emailForm.from.$touched " class="help-block  ">From email address is required</p>
         </div>
     </div>
-    <div class="form-group" ng-class="{ 'has-error' : em.toInvalid && !emailForm.to.$pristine || emailForm.to.$invalid && !emailForm.to.$pristine }">
+    <div class="form-group" ng-class="{ 'has-error' : emailForm.to.$invalid && emailForm.$submitted ||emailForm.to.$invalid && !emailForm.to.$pristine }">
         <label for="to" class="col-sm-2 control-label">To*</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="to" name="to" ng-model="em.mail.to" placeholder="example@domain.com,example@domain.com" required>
-            <p ng-show="em.toInvalid" class="help-block">Please enter a valid email</p>
-            <p ng-show="emailForm.to.$invalid && emailForm.$submitted || emailForm.to.$invalid && !emailForm.to.$pristine" class="help-block ">To email address is required</p>
+            <input type="text" class="form-control" id="to" name="to" ng-model="em.mail.to" placeholder="example@domain.com,example@domain.com" required multiple-emails>
+            <p ng-show="emailForm.to.$error.multipleEmails && emailForm.to.$touched" class="help-block">Please enter valid emails.</p>
+            <p ng-show="emailForm.to.$error.required && emailForm.$submitted || emailForm.to.$error.required && emailForm.to.$touched" class="help-block ">To email address is required</p>
 
         </div>
     </div>
-    <div class="form-group" ng-class="{ 'has-error' : em.ccInvalid && !emailForm.cc.$pristine}">
+    <div class="form-group" ng-class="{ 'has-error' : emailForm.cc.$invalid&& !emailForm.cc.$pristine}">
         <label for="cc" class="col-sm-2 control-label">Cc</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="cc" name="cc" ng-model="em.mail.cc" placeholder="example@domain.com,example@domain.com">
-            <p ng-show="em.ccInvalid" class="help-block ">Please enter a valid email</p>
+            <input type="text" class="form-control" id="cc" name="cc" ng-model="em.mail.cc" placeholder="example@domain.com,example@domain.com" multiple-emails>
+            <p ng-show="emailForm.cc.$invalid && emailForm.cc.$touched" class="help-block ">Please enter valid emails. </p>
         </div>
     </div>
-    <div class="form-group" ng-class="{ 'has-error' : em.bccInvalid && !emailForm.bcc.$pristine}">
+    <div class="form-group" ng-class="{ 'has-error' : emailForm.bcc.$invalid && !emailForm.bcc.$pristine}">
         <label for="bcc" class="col-sm-2 control-label">Bcc</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="bcc" name="bcc" ng-model="em.mail.bcc" placeholder="example@domain.com,example@domain.com">
-            <p ng-show="em.bccInvalid" class="help-block ">Please enter a valid email</p>
+            <input type="text" class="form-control" id="bcc" name="bcc" ng-model="em.mail.bcc" placeholder="example@domain.com,example@domain.com" multiple-emails>
+            <p ng-show="emailForm.bcc.$invalid && emailForm.bcc.$touched" class="help-block ">Please enter valid emails.</p>
         </div>
     </div>
     <div class="form-group" ng-class="{ 'has-error' : emailForm.subject.$invalid && !emailForm.subject.$pristine}">
         <label for="subject" class="col-sm-2 control-label">Subject*</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="subject" name="subject" ng-model="em.mail.subject" placeholder="Subject" required>
-            <p ng-show="emailForm.subject.$invalid && !emailForm.subject.$pristine" class="help-block ">Subject is required</p>
-            <p ng-show="emailForm.subject.$pristine && emailForm.$submitted" class="help-block ">Subject is required</p>
+            <p ng-show="emailForm.subject.$invalid && emailForm.subject.$touched || emailForm.subject.$pristine && emailForm.$submitted" class="help-block ">Subject is required</p>
         </div>
     </div>
     <div class="form-group">

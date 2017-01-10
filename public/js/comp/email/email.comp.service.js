@@ -1,21 +1,7 @@
 angular.module('emailApp').service('emailService', emailService);
 
 function emailService($http) {
-    this.checkEmails = function checkEmails(emails) {
-        var regx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        var valid;
-        if (emails) {
-            var array = emails.split(",");
-            array.forEach(function(email) {
-                if (!regx.test(email.trim())) {
-                    valid = true;
-                } else {
-                    valid = false;
-                }
-            })
-        }
-        return valid;
-    };
+
 
 
     this.submit = function(data) {
