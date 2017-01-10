@@ -17,7 +17,8 @@ function emailSendCtrl($scope, emailService) {
         cc: '',
         bcc: '',
         subject: '',
-        message: ''
+        message: '',
+        security: 0
     };
     var defaultForm = angular.copy(em.mail);
     em.success = '';

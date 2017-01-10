@@ -22,6 +22,7 @@ function emailService($http) {
         emailData.bcc = pushMails(mail.bcc);
         emailData.message = mail.message;
         emailData.subject = mail.subject;
+        emailData.security = mail.security;
         return emailData;
     }
 

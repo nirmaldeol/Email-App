@@ -7,16 +7,10 @@ var sendEmail = require('../postman/index');
 
 
 router.post('/', function(req, res) {
-    var x = req.body;
-    // console.log(x);
-    // x.from = 'df.sd';
-
-    // x.subject = '';
-    var err = validator(x);
-
-    if (err.error) {
-        res.status(400).json({ title: 'Bad Request', err: err.des });
-
+    console.log(req.body)
+    var error = validator(req.body);
+    if (error.err) {
+        res.status(400).json({ title: 'Bad Request', err: error.des });
     } else {
         sendEmail(request.body).then(res => {
             var message = "Your email was succesfully sent";

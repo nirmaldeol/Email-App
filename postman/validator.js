@@ -17,22 +17,30 @@ module.exports = function(data) {
     var allErrors = { err: error, des: [] };
 
     if (valid.isEmpty(data.subject)) {
-        allErrors.error = true;
+        allErrors.err = true;
         var msg = "Email Subject " + errorDef.empty;
         var emptyErr = new errorFormater("subject", msg, data.subject);
         allErrors.des.push(emptyErr);
     }
 
     if (valid.isEmpty(data.from)) {
-        allErrors.error = true;
+        allErrors.err = true;
         var msg = "From Email " + errorDef.empty;
         var emptyErr = new errorFormater("from", msg, data.from);
         allErrors.des.push(emptyErr);
     } else if (!valid.isEmail(data.from)) {
-        allErrors.error = true;
+        allErrors.err = true;
         var msg = "From Email " + errorDef.inValid;
         var invalidErr = new errorFormater("from", msg, data.from);
         allErrors.des.push(invalidErr);
+    }
+
+
+    if (data.security !== 315) {
+        allErrors.err = true;
+        var msg = "Security Number" + errorDef.inValid;
+        var inValidSec = new errorFormater("Security", msg, data.security);
+        allErrors.des.push(inValidSec);
     }
     return allErrors;
 
