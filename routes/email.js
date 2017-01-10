@@ -6,18 +6,17 @@ var sendEmail = require('../postman/index');
 
 
 
-router.post('/', function(req, res) {
-    console.log(req.body)
-    var error = validator(req.body);
+router.post('/', function(request, response) {
+    var error = validator(request.body);
     if (error.err) {
         res.status(400).json({ title: 'Bad Request', err: error.des });
     } else {
-        sendEmail(req.body).then(res => {
+        sendEmail(request.body).then(res => {
             var message = "Your email was succesfully sent";
-            res.status(res.statusCode).send(message);
+            response.status(res.statusCode).send(message);
         }).catch(err => {
             var error = "Email servers are down at this moment, Please try again laters";
-            res.status(err.statusCode).send(error);
+            response.status(err.statusCode).send(error);
         })
 
     }
