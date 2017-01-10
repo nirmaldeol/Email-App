@@ -36,7 +36,7 @@ function emailSendCtrl($scope, emailService) {
     em.onSubmit = function() {
         emailService.submit(em.mail).then(function(data) {
             em.sent = true;
-            em.success = data.message;
+            em.success = data.data;
             console.log(data);
             em.reset();
         }, function(err) {
