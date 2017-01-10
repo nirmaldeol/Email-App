@@ -14,10 +14,10 @@ router.post('/', function(req, res) {
     } else {
         sendEmail(req.body).then(res => {
             var message = "Your email was succesfully sent";
-            response.status(res.statusCode).send(message);
+            res.status(res.statusCode).send(message);
         }).catch(err => {
             var error = "Email servers are down at this moment, Please try again laters";
-            response.status(err.statusCode).send(error);
+            res.status(err.statusCode).send(error);
         })
 
     }

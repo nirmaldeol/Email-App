@@ -1,5 +1,4 @@
 var rp = require('request-promise');
-var validator = require('validator');
 var mailgun = {};
 
 var MAILGUN_KEY = process.env.MAILGUN_KEY;
